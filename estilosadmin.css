@@ -1,0 +1,146 @@
+body, html {
+  height:100%;
+  margin:0;
+  padding:0;
+  width:100%;
+  background-color:silver;
+
+}
+
+
+#menu .navbar{
+  border-bottom: 4px  #6a7570 solid;
+  opacity: ;
+}
+
+#menu .nav-item{
+  border: 2px  #6a7570 solid;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+#menu .nav-item:hover{
+  background: #3594a8;
+  color: #ffffff;
+}
+
+body, html {
+	height:100%;
+	margin:0;
+	padding:0;
+	width:100%;
+	background-color:silver;
+}
+#home-seccion{
+  background:url('img/fondo2.jpg') no-repeat;; /*#6f3c83*/
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+    font-family: "Luna";
+
+}
+
+#home-seccion .col-lg-12{
+  padding-top: 100px;
+}
+
+#home-seccion a,h1{
+  color: rgb(0, 0, 0);
+  background-color: rgba(252, 252, 252, 0.59);
+  margin-top: 120px;
+
+}
+
+#home-seccion #uno:hover, #dos:hover{
+  background-color: rgb(21, 23, 22);
+  filter:brightness(0.8);
+}
+
+#home-seccion #uno h1:hover, #uno a:hover, #dos h1:hover, #dos a:hover{
+  color: rgb(255, 246, 246);
+  background-color: rgba(0, 0, 0, 0.59);
+  filter:brightness(2);
+}
+
+.dark-overlay{
+  background-color: rgb(0, 0, 0, .76);
+  padding-bottom: 200px;
+}
+
+
+
+#home-seccion .p-4{
+  color: #825f05;
+  font-size: 2em;
+  font-style: italic;
+  text-align: center;
+  /*margin:auto;*/
+
+}
+
+#home-seccion .container{
+  margin-top: 100px;
+}
+
+/*.recuadro {
+	border:1px solid black;
+	width:49.5%;
+	display:inline-block;
+	height:49.5%;
+	overflow:hidden;
+}
+
+#uno{
+  background: url('img/fondo1.jpg');
+	}
+
+#dos{
+	background-color:green;
+	}
+
+#tres{
+	background-color:yellow;
+	}*/
+
+
+
+#uno
+  {
+    border:1px solid black;
+  	width:50%;
+  	display:inline-block;
+  	margin:auto;
+  	height:49.5%;
+    background-color:green;
+  	background:url('img/seccion1admin.jpg') no-repeat;
+    min-height: 50vh;
+    background-size: cover;
+	}
+
+#dos{
+  border:1px solid black;
+	width:49.5%;
+	display:inline-block;
+	height:49.5%;
+	background-color:green;
+  background:url('img/seccion2admin.jpg') no-repeat;
+  min-height: 50vh;
+  background-size: cover;
+	}
+
+#tres{
+  border:1px solid black;
+	width:99.5%;
+	display:inline-block;
+	height:49.5%;
+	background-color:yellow;
+
+	}
+
+#cuatro{
+  border:1px solid black;
+	width:49.5%;
+	display:inline-block;
+	height:49.5%;
+	background-color:red;
+	}

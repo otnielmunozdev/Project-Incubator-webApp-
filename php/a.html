@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Get data as JSON from a PHP file on the server.</h2>
+
+<p>The JSON received from the PHP file:</p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<button onclick="getDatos()">Hola</button>
+<button onclick="mostrarDatos()">Adios</button>
+
+<table id="myTable"></table>
+
+
+<script>
+var obj, dbParam, xmlhttp, json;
+
+function getDatos()     {
+    obj = { "user":"Andres", "pass":"1111" };
+    dbParam = JSON.stringify(obj);
+
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        document.getElementById("demo").innerHTML = this.responseText;
+        json = JSON.parse(this.responseText);
+        //document.getElementById("demo1").innerHTML = json['huevo']['movil'][0]['idHuevo'];
+        
+    };
+    xmlhttp.open("GET", "mostrarHuevo.php?x=" + dbParam, true);
+    xmlhttp.send();
+}
+    
+function mostrarDatos() {
+    document.getElementById("demo1").innerHTML = json['huevo']['movil'][0]['tipoHuevo'];
+    
+    var bandera = true;
+    var tamano = json['huevo']['movil'].length;
+    document.getElementById("demo2").innerHTML = json['huevo']['movil'].length;
+    var table = document.getElementById("myTable");
+    
+    var row;
+                    
+    var cell1;
+    var cell2;
+
+
+    // Modificar el == 
+    if(json['huevo']['movil'].length != json['huevo']['web'].length)    {
+        for(var i = 0; i<tamano; i++) {
+            if(json['huevo']['web'][i]['idhuevo'] == json['huevo']['movil'][i]['idHuevo'])  {
+                row = table.insertRow(i);
+
+                cell1 = row.insertCell(0);
+                cell2 = row.insertCell(1);
+
+                cell1.innerHTML = json['huevo']['web'][i]['idhuevo'];
+                cell2.innerHTML = json['huevo']['web'][i]['tiempoincubacion'];
+                console.log(json['huevo']['web'][i]['idhuevo']);
+                console.log(json['huevo']['movil'][i]['idHuevo']);
+
+            }
+            else    {
+                i = tamano;
+                console.log("Error");
+            }
+        }
+    }
+    else    {
+        console.log("Error");
+    }
+
+    row = table.insertRow(0);
+                    
+    cell1 = row.insertCell(0);
+    cell2 = row.insertCell(1);
+    
+    //periodoIncubacion":"4","noVueltasDia":"4","estacionAno":"4","humedadUltimoDia":"4","valido":"1"},
+    cell1.innerHTML = "ID";
+    cell2.innerHTML = "TIPO HUEVO";
+    cell2.innerHTML = "PERIODO INCUBACION";
+    cell2.innerHTML = "NO° VUELAS";
+    cell2.innerHTML = "ESTACION DEL AÑO";
+    cell2.innerHTML = "HUMEDAD ULTIMO DIA";
+    cell2.innerHTML = "TIEMPO INCUBACION";
+    
+    cell2.innerHTML = table.rows.length;
+    
+}
+
+
+//document.getElementById("demo1").innerHTML = dbParam;
+    
+</script>
+    
+<script>
+    
+    //document.getElementById("demo1").innerHTML = json;
+</script>
+
+</body>
+</html>
+
+
+<!--
+<?php
+
+// Datos para la Base de datos
+$server = 'localhost';
+$user = 'id2595279_root';
+$pass = '123pormi';
+$db = 'id2595279_basedato';
+
+//Conexion base de datos
+$mysqli = new mysqli($server, $user, $pass, $db);
+        if ($result = $mysqli->query("SELECT * FROM Mundo")) {
+                // Arreglos para las filas, columnas y principal
+                $arrayRows = [];
+                $arrayCols = [];
+                $arrayPrincipal = [];
+                if ($result->num_rows > 0)  {
+                    
+                    // El primer Dato del Json es las columnas con estos datos
+                        // id, label, pattern, type, p
+                        // Type es un requisito los demas son opccionales
+                    array_push($arrayCols, [
+                        'id' => "",
+                        'label' => "A-label",
+                        "pattern" => "",
+                        'type' => "string"
+                        ]);
+                        
+                    array_push($arrayCols, [
+                        'id' => "",
+                        'label' => "B-label",
+                        "pattern" => "",
+                        'type' => "number"
+                        ]);
+                    
+                    // El segundo dato del Json son las filas con estos datos
+                        // v, f, p, 
+                    while ($row = $result->fetch_object())  {
+                        // un arreglo auxiliar para que no se acumule en el arreglo
+                        $arrayAux = [];
+                        array_push($arrayAux, [
+                            'v' => $row->Pais,
+                            'f' => null
+                            ]);
+                            
+                        array_push($arrayAux, [
+                            'v' => intval($row->Visitas),
+                            'f' => null
+                            ]);
+                        
+                        array_push($arrayRows, [
+                            'c' => $arrayAux
+                            ]);
+                    }
+
+                    // Juntamos los dos datos
+                    $arrayPrincipal = array(
+                        "cols" => $arrayCols,
+                        "rows" => $arrayRows);
+                    
+                }
+                else  {
+                    echo "Error DB";
+                }
+        }
+        
+    // Codificamos el arreglo
+    $chartJSON = json_encode($arrayPrincipal);
+    
+    
+    echo $chartJSON;
+    //echo "<br>";
+    
+    //$chartJSON = json_decode($chartJSON, true);
+    
+    //echo $chartJSON[0]["rows"][0]["Pais"];
+    //echo ", ";
+    //echo $chartJSON[0]["rows"][0]["Visitas"];
+    
+?>
+
+-->

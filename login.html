@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Iniciar Sesi&oacute;n</title>
+    <meta name="description" content="Aplicacion web de incubadora">
+    <meta name="keywords" content="Sesion,Encubadora, Incubadora, Huevos , Pollos">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilossesion.css">
+    <link rel="icon" href="img/logo.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> <!--Iconos-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+    <!--Navegacion-->
+    <div >
+    <nav class=" navbar navbar-expand-md navbar-dark bg-dark fixed-top text-center" id="menu">
+
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <img src="img/huevos.png" alt="Huevos Emplumados" width="50px" >
+          Huevos Emplumados
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#SecondNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="SecondNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="infoincubadoras.html">Sobre las encubadoras</a></li>
+            <li class="nav-item"><a class="nav-link" href="infocuidado.html">Sobre el cuidado</a></li>
+            <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contactacnos">Contacto</a></li>
+          </ul>
+          <form class="form-inline">
+          <!--  <input type="text" class="form-control" placeholder="Search">
+            <button class="btn btn-outline-success" type="button">Search</button>-->
+          </form>
+        </div>
+
+      </div>
+    </nav>
+  </div>
+
+    <!--Fin Navegacion-->
+    <div class="container">
+      <div class="login-form  col-md-4 offset-md-4">
+        <h1 class="title">Sesión de Inicio</h1>
+        <form class="form1" action="php/recibeDatos.php" method="get">
+
+          <div class="form-group text-center">
+            <label><strong>Introduce tu Usuario: </strong></label>
+            <input type="text" name="user" placeholder="Usuario" class="form-control">
+          </div>
+          
+          <div class="form-group text-center">
+            <label><strong>Introduce tu Contraseña: </strong></label>
+            <input type="password" name="pass" placeholder="Contraseña" class="form-control">
+          </div>
+
+          <div class="form-group text-center">
+            <input type="checkbox" name="" value="" class="text-center">
+            Remember me
+          </div>
+          <div>
+              <input type="submit" value="Entrar" class="btn btn-primary btn-block active" role="button" aria-pressed="true">
+          </div>
+          <!--button type="button" name="button" class="btn btn-primary btn-block">login</button-->
+          <a href="login1.html" class="btn btn-primary btn-block active" role="button" aria-pressed="true">Codigo Incubadora</a>
+        </form>
+      </div>
+
+    </div>
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  </body>
+</html>

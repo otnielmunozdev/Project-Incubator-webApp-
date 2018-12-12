@@ -1,0 +1,159 @@
+
+body{
+  background-color: #474147;
+  color: #fff;
+}
+
+#menu .navbar{
+  border-bottom: 4px  #6a7570 solid;
+  opacity: ;
+}
+
+#menu .nav-item{
+  border: 2px  #6a7570 solid;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+#menu .nav-item:hover{
+  background: #3594a8;
+  color: #ffffff;
+}
+
+
+#home-seccion{
+  background: url('img/fondo1.jpg') no-repeat;
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+#home-seccion .col-lg-12{
+  padding-top: 100px;
+}
+
+#home-seccion h1{
+  padding-top: 200px;
+}
+
+.dark-overlay{
+  background-color: rgb(0, 0, 0, .76);
+  padding-bottom: 210px;
+  /*position:absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  min-width: 100%;*/
+}
+
+#home-seccion .home-inner{
+  margin: center;
+}
+
+
+#home-seccion .display-3 {
+  font-family: "Luna";
+  font-style: italic;
+  /*border-radius: 10px;*/
+  /*margin: auto;*/
+  font-weight: lighter;
+  background: -webkit-linear-gradient(yellow,#eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: .80;
+}
+
+#home-seccion .p-4{
+  color: #825f05;
+  font-size: 2em;
+  font-style: italic;
+  text-align: center;
+  /*margin:auto;*/
+
+}
+
+
+.info-head-section{
+  background-color: rgb(0, 0, 0);
+}
+
+#infoseccion .btn btn-outline-primary{
+          margin-left: 5000px;
+}
+
+#infoseccion .col-md-6 h3{
+  margin-right:
+}
+
+#botonserv {
+  display:inline;
+  border:1px solid #ffffff;
+  padding: 8px;
+  }
+  #botonserv a:link{
+    color: #ffffff;
+  }
+
+  #botonserv{
+    border-radius: 5px;
+
+  }
+  #botonserv:hover{
+    background-color: #ffffff;
+  }
+  #botonserv a:hover{
+    text-decoration:none;
+    color: #000000;
+  }
+
+    #botoninfo {
+      display:inline;
+      border:1px solid rgb(0, 133, 255);
+      padding: 8px;
+      }
+      #botoninfo a:link{
+        color: rgb(0, 133, 255);
+      }
+
+      #botoninfo{
+        border-radius: 5px;
+
+      }
+      #botoninfo:hover{
+        background-color: rgb(0, 133, 255);
+      }
+      #botoninfo a:hover{
+        text-decoration:none;
+        color: #fcf5f5;
+      }
+
+footer{
+  background-color: #323230;
+  font-size: 1.1em;
+  font-weight: lighter;
+  font-family: "Arial";
+
+}
+
+footer .text-center h3{
+  font-size: 2em;
+  font-family: "Harrington";/*"Curlz MT"*/
+}
+
+footer .row h3{
+  padding-left: 600px ;
+}
+
+footer .row p .text-center{
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px){
+
+  footer {
+    width: 1%;
+    height: 1%
+
+  }
+
+}

@@ -1,0 +1,48 @@
+
+body{
+  background-color: #474147;
+  background: url(img/infofondo2.jpg);
+  color: #fff;
+  background-attachment:fixed;
+  background-size: cover;
+}
+
+#menu .navbar{
+  border-bottom: 4px  #6a7570 solid;
+  opacity: ;
+}
+
+#menu .nav-item{
+  border: 2px  #6a7570 solid;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+#menu .nav-item:hover{
+  background: #3594a8;
+  color: #ffffff;
+}
+
+#seccionprincipal{
+  margin-top: 100px;
+  background-color: #373938;
+/*  box-shadow: 10px 10px 8px #888888;*/
+  -webkit-box-shadow: 10px 10px 201px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 201px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 201px 0px rgba(0,0,0,0.75);
+}
+
+.card-block{
+  margin-bottom: 30px;
+}
+
+.card-block p{
+  padding-top: 80px;
+  font-size: 1.2em;
+}
+
+
+#seccionprincipal .tituloprincipal{
+  padding-top: 70px;
+  font-size: 3em;
+}

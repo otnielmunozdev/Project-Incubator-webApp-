@@ -1,0 +1,272 @@
+
+body{
+
+  background: url(img/fondosesion1.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+.login-form{
+  font-family: "Luna";
+  height: 500px;
+  margin-top: 100px;
+  box-shadow: 0px 0px 10px 1px grey;
+  border-radius: 5px;
+  padding-bottom: 5px;
+  background-color: rgba(255, 161, 0, 0.68);
+}
+.title{
+  background: #bf9b00;
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  border-radius:  0px 0px 10px 1px;
+}
+.form1{
+  padding-top: 50px;
+}
+
+#menu .navbar{
+  border-bottom: 4px  #6a7570 solid;
+  opacity: ;
+}
+
+#menu .nav-item{
+  border: 2px  #6a7570 solid;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+#menu .nav-item:hover{
+  background: #3594a8;
+  color: #ffffff;
+}
+
+
+#home-seccion{
+  background: url('img/fondosesion1.jpg') no-repeat  rgb(0, 0, 0, 1);
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+#home-seccion .col-lg-12{
+  margin-top: 200px;
+  /*background: url('img/logo.ico')  center  no-repeat;*/
+
+
+}
+
+
+ .dark-overlay{
+
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  min-width: 100%;
+}
+
+#home-seccion .col-sm-12 {
+  background: -webkit-linear-gradient(red,yellow);
+  -webkit-background-clip: text;
+}
+
+@media (max-width: 992px){
+  .home-inner{
+    padding: 100px;
+  }
+}
+
+
+
+
+.info-head-section{
+  background-color: rgb(0, 0, 0);
+}
+
+#infoseccion .btn btn-outline-primary{
+          margin-left: 5000px;
+}
+
+#infoseccion .col-md-6 h3{
+  margin-right:
+}
+
+footer{
+  background-color: #141413;
+  font-size: 1.1em;
+  font-weight: lighter;
+  font-family: "Arial";
+}
+
+footer .text-center h3{
+  font-size: 2em;
+  font-family: "Harrington";/*"Curlz MT"*/
+  text-align: center;
+}
+
+a, a:hover, a:focus {
+	text-decoration: none;
+}
+h1, h2 {
+	margin-top: 10px;
+	font-size: 38px;
+    font-weight: 100;
+    line-height: 50px;
+}
+h3 {
+	font-size: 22px;
+    font-weight: 200;
+}
+
+/* Contenidos y Formulario*/
+.my-content .mydescription {
+    margin: 20px 0 10px 0;
+
+}
+.my-content .mydescription p {
+    opacity: ;
+}
+.myform-cont {
+    margin-top: 0px;
+}
+.myform-top {
+    overflow:visible;
+    padding: 0 25px 15px 25px;
+    background: rgba(0, 0, 0, 0.35);
+    -moz-border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+
+}
+.myform-top-left {
+    float: left;
+    width: 75%;
+    padding-top: 25px;
+    text-align: left;
+}
+.myform-top-left p {
+    opacity: 0.8;
+}
+.myform-top-right {
+    float: right;
+    width: 25%;
+    padding-top: 25px;
+    font-size: 66px;
+    text-align: right;
+    opacity: 0.3;
+}
+.myform-bottom {
+    padding: 25px 25px 30px 25px;
+    background: rgba(0, 0, 0, 0.3);
+    -moz-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+.myform-bottom .mybtn {
+    width: 100%;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+textarea.form-control {
+    height: 50px;
+    vertical-align: middle;
+    background: #fff;
+    border: 3px solid #fff;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+textarea.form-control:focus {
+    background: #fff;
+    border: 2px solid #1AAE88;
+}
+
+
+button.mybtn {
+    height: 50px;
+    background: #1AAE88;
+    border: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 40px;
+    color: #fff;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+
+}
+button.mybtn:hover, button.mybtn:active {
+    opacity: 0.6;
+    color: #fff;
+}
+button.mybtn:focus {
+    opacity: 0.6;
+    color: #fff;
+    background: #de615e;
+}
+
+/*LOGIN REDES SOCIALES*/
+
+.mysocial-login {
+    margin-top: 35px;
+}
+.mysocial-login-buttons {
+    margin-top: 25px;
+}
+.mybtn-social {
+    display: inline-block;
+    height: 50px;
+    margin: 5px;
+    padding: 15px 20px 0 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #fff;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.mybtn-social:hover, .mybtn-social:focus, .mybtn-social:active:focus {
+    outline: 0;
+    opacity: 0.6;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+/* Media queries */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (max-width: 767px) {
+
+    .mytop-content { padding: 60px 0 110px 0; }
+
+}
+
+@media (max-width: 415px) {
+
+    h1, h2 { font-size: 32px; }
+
+}
+
+#home-seccion .row{
+        padding:inherit;
+        margin-left: 350px;
+        margin-right: 350px;
+        text-align: center;
+      }
+
+.myform-top h3,p{
+  text-align: center;
+}

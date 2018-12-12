@@ -1,0 +1,136 @@
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+
+CREATE DATABASE Incubadora�
+CREATE DATABASE proyectosd
+
+/*Crear tabla*/
+/*Administrador*/
+CREATE TABLE administrador(
+	idAdministrador INTEGER AUTO_INCREMENT NOT NULL,
+	usuario VARCHAR(50) NOT NULL,
+	/*contrasena VARBINARY(20) NOT NULL,*/
+	contrasena VARCHAR(20) NOT NULL,
+	valido BOOLEAN NOT NULL,
+	PRIMARY KEY(idAdministrador)
+);
+
+/*Huevo*/
+CREATE TABLE huevo(
+	idHuevo INTEGER AUTO_INCREMENT NOT NULL,
+	tiempoIncubacion INT NOT NULL,
+	valido BOOLEAN NOT NULL,
+	PRIMARY KEY(idHuevo)
+);
+
+/*Incubadora*/
+CREATE TABLE incubadora(
+	idIncubadora INTEGER AUTO_INCREMENT NOT NULL,
+	tamano INT NOT NULL,
+	capacidadMaxima INT NOT NULL,
+	valido BOOLEAN NOT NULL,
+	PRIMARY KEY(idIncubadora)
+);
+	
+/*Cliente*/
+CREATE TABLE cliente(
+	idCliente INTEGER AUTO_INCREMENT NOT NULL,
+	nombre VARCHAR(50) NOT NULL,
+	apellidoPaterno VARCHAR(45) NOT NULL,
+	apellidoMaterno VARCHAR(45) NOT NULL,
+	/*fechaNacimiento DATE NOT NULL,*/
+	telefono VARCHAR(13) NOT NULL,
+	domicilio VARCHAR(100) NOT NULL,
+	diaIngreso DATE NOT NULL,
+	valido BOOLEAN NOT NULL,
+	PRIMARY KEY(idCliente)
+);
+
+/*Numero de huevos en agregar huevo*/
+/*DATE = Ano-mes-dia(1996-09-26)*/
+
+/*AgregarHuevo*/
+CREATE TABLE agregar_huevo(
+	idAgregarHuevo INTEGER AUTO_INCREMENT NOT NULL,
+	diaRegistro DATE NOT NULL,
+	noHuevos INT NOT NULL,
+	/*valido bool NOT NULL,*/
+	PRIMARY KEY(idAgregarHuevo)
+);
+
+/*VerIncubadora*/
+CREATE TABLE ver_incubadora(
+	idVerIncubadora INTEGER AUTO_INCREMENT NOT NULL,
+	codigoAcceso VARCHAR(15) NOT NULL,
+	/*valido bool NOT NULL,*/
+	PRIMARY KEY(idVerIncubadora)
+);
+
+/*Atributos para las llaves foraneas*/
+ALTER TABLE huevo
+	ADD COLUMN idAdministrador INT  NOT NULL;
+
+
+ALTER TABLE cliente
+	ADD COLUMN idAdministrador INT   NOT NULL;
+
+ALTER TABLE agregar_huevo
+	ADD COLUMN idIncubadora INT   NOT NULL,
+	ADD COLUMN idCliente INT   NOT NULL,
+	ADD COLUMN idHuevo INT   NOT NULL;
+
+ALTER TABLE ver_incubadora
+	ADD COLUMN idIncubadora INT  NOT NULL,
+	ADD COLUMN idAdministrador INT   NOT NULL;
+
+/*Llaves foraneas*/
+ALTER TABLE huevo
+	ADD CONSTRAINT idAdministrador
+	FOREIGN KEY (idAdministrador)
+	REFERENCES administrador (idAdministrador)
+	ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+ALTER TABLE incubadora
+	ADD CONSTRAINT idAdministrador
+	FOREIGN KEY (idAdministrador)
+	REFERENCES administrador (idAdministrador)
+	ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+ALTER TABLE cliente
+	ADD CONSTRAINT idAdministrador
+	FOREIGN KEY (idAdministrador)
+	REFERENCES administrador (idAdministrador)
+	ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+ALTER TABLE agregar_huevo
+	ADD CONSTRAINT idCliente
+	FOREIGN KEY (idCliente)
+	REFERENCES cliente (idCliente)
+	ON DELETE NO ACTION ON UPDATE NO ACTION,
+	ADD CONSTRAINT idIncubadora
+	FOREIGN KEY (idIncubadora)
+	REFERENCES incubadora (idIncubadora)
+	ON DELETE NO ACTION ON UPDATE NO ACTION,
+	ADD CONSTRAINT idHuevo
+	FOREIGN KEY (idHuevo)
+	REFERENCES huevo (idHuevo)
+	ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+ALTER TABLE ver_incubadora
+	ADD CONSTRAINT idAdministrador
+	FOREIGN KEY (idAdministrador)
+	REFERENCES administrador (idAdministrador)
+	ON DELETE NO ACTION ON UPDATE NO ACTION,
+	ADD CONSTRAINT idIncubadora
+	FOREIGN KEY (idIncubadora)
+	REFERENCES incubadora (idIncubadora)
+	ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+INSERT INTO administrador (usuario, contrasena, valido) VALUES ('Andres', '1111', true);
+
+/*
+--INSERT INTO cliente (nombre,apellidop,apellidom,fechanacimiento,domicilio,telefono) VALUES ('1','1','1','1996-01-01','1','1');
+SELECT * FROM compra, automovil
+--INSERT INTO administrador (nombre, contrasena) VALUES ('1', '1');
+--INSERT INTO compra (fecha, estadoautomovil, numduenos, kilometraje, codigocliente, codigoadministrador, codigoautomovil) VALUES ('1991-01-01', '1', '1', '1', '1', '1', '1')
+*/
