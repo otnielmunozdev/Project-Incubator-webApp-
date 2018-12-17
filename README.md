@@ -1,6 +1,7 @@
 # Project-Incubator-webApp-
 
-##Description about of this
+## Description about of this
+
 A system was designed which manages and is responsible for the care of egg incubators, 
 which are comprised of two applications (web page and mobile application), 
 through the website we present our service and information on incubators and care of the same as the eggs, 
